@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Water Hockey Database Schema</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel='stylesheet' type='text/css' href='../style/style.css'>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../WaterHockey.html">Home</a></li>
+                <li><a href="../display/display_data.php">Display Data</a></li>
+                <li><a href="../admin/edit_data.php">Data Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+
+    <!-- Page content -->
+    <section>
+        <h2>Database Schema</h2>
+
+        <p>The water hockey database consists of four (4) tables - Team, Player, Pool and Game. The general schema for each table is shown below, along with the SQLite query used to create the table. Primary keys have been selected organically rather than creating an artificial id column for each table. SQLite's use of the inbuilt 'rowid' functionality allows certain queries used within this web application to identify rows correctly without the need for an artificial primary key.<p>
+
+        <!-- Team table schema -->
+        <h3>Team</h3>
+        <p>Team (<u>teamName</u>, manager, teamPool)</p>
+        <code>CREATE TABLE Team (<br>
+            teamName INT PRIMARY KEY NOT NULL,<br>
+            manager TEXT NOT NULL,<br>
+            teamPool TEXT NOT NULL,<br>
+            FOREIGN KEY (teamPool) REFERENCES Pool (poolName)<br>
+            );
+        </code>
+
+        <!-- Player table schema -->
+        <h3>Player</h3>
+        <p>Player (<u>givenName</u>, <u>familyName</u>, <u>dob</u>, handed, playerTeam)</p>
+        <code>CREATE TABLE Player (<br>
+            givenName TEXT NOT NULL,<br>
+            familyName TEXT NOT NULL,<br>
+            dob TEXT NOT NULL,<br>
+            handed TEXT,<br>
+            playerTeam TEXT NOT NULL,<br>
+            PRIMARY KEY (givenName, familyName, dob),<br>
+            FOREIGN KEY (playerTeam) REFERENCES Team (teamName)<br>
+            );
+        </code>
+
+        <!-- Pool table schema -->
+        <h3>Pool</h3>
+        <p>Pool (<u>poolName</u>, length, address)</p>
+        <code>CREATE TABLE Pool (<br>
+            poolName TEXT PRIMARY KEY NOT NULL,<br>
+            length INT,<br>
+            address TEXT NOT NULL<br>
+            );<br>
+        </code>
+
+        <!-- Game table schema -->
+        <h3>Game</h3>
+        <p>Game (<u>gamePool</u>, <u>date</u>, teamA, teamB, scoreA, scoreB)</p>
+        <code>CREATE TABLE Game (<br>
+            gamePool TEXT NOT NULL,<br>
+            date TEXT NOT NULL,<br>
+            teamA TEXT NOT NULL,<br>
+            teamB TEXT NOT NULL,<br>
+            scoreA INT NOT NULL,<br>
+            scoreB INT NOT NULL,<br>
+            PRIMARY KEY (gamePool, date),<br>
+            FOREIGN KEY (gamePool) REFERENCES Pool (poolName)<br>
+            );
+        </code>
+    </section>
+</body>
+</html>

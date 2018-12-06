@@ -1,0 +1,195 @@
+/*Sets the font for the whole application.*/
+body, html {
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+/* General page layout */
+
+section {
+    width: 95%;
+    margin: auto;
+    padding-bottom: 1em;
+}
+
+h2 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+/* Index page navigation buttons */
+.index_nav {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.index_nav_btn {
+    border: 2px solid black;
+    font-size: 2em;
+    font-weight: bold;
+    height: fit-content;
+    margin: 0 3em 0 3em;
+    width: fit-content;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.index_nav_btn:hover, li:hover, .btn:hover {
+    background-color: rgb(75,172,198);
+    cursor: pointer;
+}
+
+/* Standard navigation buttons */
+header {
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    list-style: none;
+    display: inline-flex;
+}
+
+li {
+    margin: 0 2em 0 2em;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+hr {
+    width: 50%;
+}
+
+/* Display data page */
+.display_form {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+fieldset {
+    margin-top: 2em;
+}
+
+legend {
+    color: rgb(75,172,198);
+    font-weight: bold;
+}
+
+.data_para {
+    text-align: center;
+}
+
+.btn {
+    border-style: none;
+    background-color: white;
+    border: 2px solid black;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 2em;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+.display_hr {
+    width: 100%;
+}
+
+.display_container {
+    width: 50%;
+    margin: auto;
+}
+
+.display_h4 {
+    color: rgb(75,172,198);
+}
+
+.display_span {
+    font-weight: bold;
+}
+
+/* Edit data page */
+.edit_form {
+    text-align: center;
+}
+
+.edit_container {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    margin: auto;
+    line-height: 1.5;
+}
+
+td {
+    padding-right: 40px;
+    padding-bottom: 10px;
+}
+
+th {
+    text-align: left;
+    padding-right: 40px;
+    padding-bottom: 10px;
+}
+
+.add_btn {
+    margin-bottom: 10px;
+}
+
+.edit_btn {
+    margin: 0 10px 0 0;
+}
+
+.del:hover {
+    background-color: maroon;
+    color: white;
+}
+
+.edit_input {
+    margin: 0 10px;
+}
+
+.input_text, .message {
+    color: rgb(75,172,198);
+    font-weight: bold;
+}
+
+.game_edit_btns, .message {
+    text-align: center;
+    margin: 20px;
+}
+
+.table_select_btn {
+    margin-right: 20px;
+}
